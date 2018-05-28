@@ -41,4 +41,4 @@ const LoginButton = () => (
 All of this works locally with `gatsby develop`, but when I try to `gatsby build` the site for deployment, a few things go wrong:
 
 1.  The `async`/`await` call in `gatsby-browser.js` seems to cause problems. Is there another place I should call this?
-1.  `gatsby` calls `oneOf` in the `node` environment (server-side) when I want these functions to be evaluated client-side. Can I change this?
+1.  `gatsby` calls `oneOf` in the `node` environment (server-side) before `initialize` is called, causing errors. I want `oneOf` calls to happen on the client so `LoginButton` is determined at runtime. Can I change this?
