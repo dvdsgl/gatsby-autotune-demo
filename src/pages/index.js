@@ -3,6 +3,27 @@ import Link from 'gatsby-link'
 
 import { oneOf, complete } from 'autotune'
 
+const LoginButton = () => (
+  <button
+    className="btn btn-lg btn-primary btn-block btn-signin"
+    type="submit"
+    onClick={() => {
+      alert('Thank you for trying the demo!')
+      complete()
+    }}
+    style={{
+      backgroundColor: oneOf('Login Primary Action – Background Color', [
+        '#8e44ad',
+        '#2980b9',
+        '#2c3e50',
+        '#2ecc71',
+      ]),
+    }}
+  >
+    {oneOf('Login Primary Action', ['Sign In', 'Log In', 'Create Account'])}
+  </button>
+)
+
 const IndexPage = () => (
   <div className="container">
     <div className="card card-container">
@@ -34,28 +55,7 @@ const IndexPage = () => (
             <input type="checkbox" value="remember-me" /> Remember me
           </label>
         </div>
-        <button
-          className="btn btn-lg btn-primary btn-block btn-signin"
-          type="submit"
-          onClick={() => {
-            alert('Thank you for trying the demo!')
-            complete()
-          }}
-          style={{
-            backgroundColor: oneOf('Login Primary Action – Background Color', [
-              '#8e44ad',
-              '#2980b9',
-              '#2c3e50',
-              '#2ecc71',
-            ]),
-          }}
-        >
-          {oneOf('Login Primary Action', [
-            'Sign In',
-            'Log In',
-            'Create Account',
-          ])}
-        </button>
+        <LoginButton />
       </form>
       <a href="#" className="forgot-password">
         Forgot the password?
