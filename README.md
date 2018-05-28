@@ -16,7 +16,7 @@ exports.onClientEntry = async () => {
 }
 ```
 
-Then I render the login button as a component that uses's `autotune.oneOf` to create some variable colors and labels to be A/B tested:
+Then I render the login button as a component using `autotune.oneOf` to create some variable colors and labels to be A/B tested:
 
 ```jsx
 import { oneOf } from 'autotune'
@@ -38,7 +38,7 @@ const LoginButton = () => (
 )
 ```
 
-All of this works as expected locally when running with `gatsby develop`, but when I try to `gatsby build` the site for deployment, a few things go wrong:
+All of this works locally with `gatsby develop`, but when I try to `gatsby build` the site for deployment, a few things go wrong:
 
 1.  The `async`/`await` call in `gatsby-browser.js` seems to cause problems. Is there another place I should call this?
 1.  `gatsby` calls `oneOf` in the `node` environment (server-side) when I want these functions to be evaluated client-side. Can I change this?
