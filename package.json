@@ -1,8 +1,7 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "gatsby-autotune-demo",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "David Siegel <djsiegel@gmail.com>",
   "dependencies": {
     "autotune": "0.0.10",
     "gatsby": "^1.9.247",
