@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import { oneOf } from 'autotune'
+import { oneOf, complete } from 'autotune'
 
 const IndexPage = () => (
   <div className="container">
@@ -37,6 +37,10 @@ const IndexPage = () => (
         <button
           className="btn btn-lg btn-primary btn-block btn-signin"
           type="submit"
+          onClick={() => {
+            alert('Thank you for trying the demo!')
+            complete()
+          }}
           style={{
             backgroundColor: oneOf('Login Primary Action – Background Color', [
               '#8e44ad',
